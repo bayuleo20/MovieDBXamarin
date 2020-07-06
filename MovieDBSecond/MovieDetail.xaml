@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieDBSecond.MovieDetail"
+             Title="{Binding Title}">
+
+    <StackLayout Orientation="Vertical"
+                 Margin="12,12,12,12">
+        <Image Source="{Binding Backdrop}"
+               VerticalOptions="Start"
+               Aspect="AspectFill"/>
+        <StackLayout Orientation="Horizontal">
+            <Image Source="{Binding Image}"
+                   HeightRequest="250"/>
+            <StackLayout Orientation="Vertical">
+                <Label Text="{Binding Title}"
+                        HorizontalOptions="Start"
+                        FontSize="Title"
+                        TextColor="Black"
+                        FontAttributes="Bold"/>
+                <Label Text="{Binding Release, StringFormat='Release Date : {0:F0}'}"/>
+                <Label Text="{Binding Rating, StringFormat='Rating : {0:F0}'}"/>
+            </StackLayout>
+        </StackLayout>
+        <Label Text="Overview"
+               FontSize="Subtitle"
+               TextColor="Black"/>
+        <Label Text="{Binding Overview}"/>
+    </StackLayout>
+</ContentPage>
