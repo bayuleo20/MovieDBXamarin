@@ -9,7 +9,7 @@ namespace MovieDBSecond.ViewModels
 {
     public class BaseViewModel: INotifyPropertyChanged
     {
-        public IUserDialogs PageDialog = UserDialogs.Instance;
+        //public IUserDialogs PageDialog = UserDialogs.Instance;
         public IApiManager ApiManager;
         IApiService<MovieAPI> movieApi = new ApiService<MovieAPI>(Config.ApiUrl);
         public event PropertyChangedEventHandler PropertyChanged;
@@ -27,7 +27,7 @@ namespace MovieDBSecond.ViewModels
             {
                 if (IsBusy) return;
                 IsBusy = true;
-                if (ShowLoading) UserDialogs.Instance.ShowLoading(loadingMessage ?? "Loading");
+                //if (ShowLoading) UserDialogs.Instance.ShowLoading(loadingMessage ?? "Loading");
                 await task;
             }
             catch (Exception e)
@@ -42,7 +42,7 @@ namespace MovieDBSecond.ViewModels
             finally
             {
                 IsBusy = false;
-                if (ShowLoading) UserDialogs.Instance.HideLoading();
+                //if (ShowLoading) UserDialogs.Instance.HideLoading();
             }
         }
 

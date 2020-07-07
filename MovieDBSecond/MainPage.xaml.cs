@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using MovieDBSecond.Models;
 using MovieDBSecond.Network;
 using MovieDBSecond.ViewModels;
 using Refit;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MovieDBSecond
@@ -64,16 +66,16 @@ namespace MovieDBSecond
 
         //async Task CallApi()
         //{
-            //var apiResponse = RestService.For<MovieAPI>("https://api.themoviedb.org/3");
-            //var movies = await apiResponse.GetNowPlaying(Constants.MovieDBAPIKey);
-            //datas = movies.Results;
-            //Debug.WriteLine("bayu123");
-            //Debug.WriteLine(movies);
-            //Debug.WriteLine("bayu456");
-            //Debug.WriteLine(datas[0].Overview);
-            //Debug.WriteLine(datas[1].Overview);
+        //var apiResponse = RestService.For<MovieAPI>("https://api.themoviedb.org/3");
+        //var movies = await apiResponse.GetNowPlaying(Constants.MovieDBAPIKey);
+        //datas = movies.Results;
+        //Debug.WriteLine("bayu123");
+        //Debug.WriteLine(movies);
+        //Debug.WriteLine("bayu456");
+        //Debug.WriteLine(datas[0].Overview);
+        //Debug.WriteLine(datas[1].Overview);
 
-            //var apiResponse = MovieDBSecond.Network.NetworkService
+        //var apiResponse = MovieDBSecond.Network.NetworkService
         //}
     }
 }

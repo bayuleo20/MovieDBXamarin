@@ -9,7 +9,10 @@ namespace MovieDBSecond.Models
         public double Popularity { get; set; }
         public int VoteCount { get; set; }
         public bool Video { get; set; }
+
+        [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
+
         public int Id { get; set; }
         public bool Adult { get; set; }
         public string BackdropPath { get; set; }
@@ -20,6 +23,8 @@ namespace MovieDBSecond.Models
         public double VoteAverage { get; set; }
         public string Overview { get; set; }
         public string ReleaseDate { get; set; }
+
+        public string Poster => $"https://image.tmdb.org/t/p/w500{PosterPath}";
     }
 
     public class Dates

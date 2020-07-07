@@ -34,6 +34,7 @@ namespace MovieDBSecond.ViewModels
                 Debug.WriteLine("bayu777");
                 Debug.WriteLine(response);
                 Debug.WriteLine(json.Results[0].Title);
+                Debug.WriteLine(json.Results[0].PosterPath);
                 Movies = new ObservableCollection<Result>(json.Results);
                 Debug.WriteLine("bayu888");
                 Debug.WriteLine(Movies);
@@ -43,7 +44,9 @@ namespace MovieDBSecond.ViewModels
                 OnPropertyChanged("PageTitle");
             }
             else{
-                await PageDialog.AlertAsync("Unable to get data", "Error", "Ok");
+                Debug.WriteLine("bayu777");
+                Debug.WriteLine(moviesResponse.StatusCode);
+                //await PageDialog.AlertAsync("Unable to get data", "Error", "Ok");
             }
         }
 

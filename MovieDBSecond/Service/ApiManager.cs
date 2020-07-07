@@ -16,7 +16,7 @@ namespace MovieDBSecond.Service
 {
     public class ApiManager : IApiManager
     {
-        IUserDialogs _userDialogs = UserDialogs.Instance;
+        //IUserDialogs _userDialogs = UserDialogs.Instance;
         IConnectivity _connectivity = CrossConnectivity.Current;
         IApiService<MovieAPI> movieApi;
         public bool IsConnected { get; set; }
@@ -58,7 +58,7 @@ namespace MovieDBSecond.Service
                 data.StatusCode = HttpStatusCode.BadRequest;
                 data.Content = new StringContent(strngResponse);
 
-                _userDialogs.Toast(strngResponse, TimeSpan.FromSeconds(1));
+                //_userDialogs.Toast(strngResponse, TimeSpan.FromSeconds(1));
                 return data;
             }
 
@@ -70,7 +70,7 @@ namespace MovieDBSecond.Service
                 data.StatusCode = HttpStatusCode.BadRequest;
                 data.Content = new StringContent(strngResponse);
 
-                _userDialogs.Toast(strngResponse, TimeSpan.FromSeconds(1));
+                //_userDialogs.Toast(strngResponse, TimeSpan.FromSeconds(1));
                 return data;
             }
 
