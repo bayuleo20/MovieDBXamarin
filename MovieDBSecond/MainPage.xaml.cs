@@ -26,13 +26,13 @@ namespace MovieDBSecond
 
         }
 
-        //protected async override void OnAppearing()
-        //{
-        //    base.OnAppearing();
+        protected async override void OnAppearing() { 
+            
+            //    base.OnAppearing();
 
             //LoadData();
             //await CallApi();
-        //}
+        }
 
         //async void LoadData()
         //{

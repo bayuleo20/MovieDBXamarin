@@ -17,43 +17,57 @@
         <local:MainPageViewModel/>
     </ContentPage.BindingContext>
 
-    <StackLayout>
-        <Label
+    <AbsoluteLayout>
+        
+
+        <StackLayout>
+            <Label
             x:Name="page_label"
             Text="{Binding PageTitle}"
             FontSize="30"/>
-        <Button Text="Get Data"
+            <Button Text="Get Data"
                 Command="{Binding GetDataCommand}"/>
-
-        <ListView x:Name="MoviesListview"
+            <ListView x:Name="MoviesListview"
                   ItemsSource="{Binding Movies}"
                   HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout
                                 Orientation="Horizontal"
                                 VerticalOptions="Start"
                                 Margin="16,8,16,8">
-                                <Image HeightRequest="200"
+                                    <Image HeightRequest="200"
                                        WidthRequest="100"
                                        Source="{Binding Poster}"
                                        VerticalOptions="Start"/>
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding Title}"
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Title}"
                                            FontSize="Title"
                                            FontAttributes="Bold"/>
-                                    <Label Text="{Binding Rating, StringFormat='{0:F0}/10'}"/>
-                                    <Label Text="{Binding Release}"/>
-                                    <Label Text="{Binding Overview}"/>
+                                        <Label Text="{Binding Rating, StringFormat='{0:F0}/10'}"/>
+                                        <Label Text="{Binding Release}"/>
+                                        <Label Text="{Binding Overview}"/>
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-    </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical"
+                     IsVisible="{Binding IsLoading}"
+                     AbsoluteLayout.LayoutBounds="10,10,1,1"
+                     AbsoluteLayout.LayoutFlags="SizeProportional">
+            <ActivityIndicator IsRunning="True"
+                               Color="Black"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+    </AbsoluteLayout>
 </ContentPage>

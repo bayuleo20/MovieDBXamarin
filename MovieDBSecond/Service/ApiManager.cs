@@ -96,7 +96,7 @@ namespace MovieDBSecond.Service
             return data;
         }
 
-        public async Task<HttpResponseMessage> GetNowPlaying(string api_key)
+        public async Task<HttpResponseMessage> GetNowPlaying()
         {
             var cts = new CancellationTokenSource();
             var task = RemoteRequestAsync<HttpResponseMessage>(movieApi.GetApi(Priority.UserInitiated).GetNowPlaying(Constants.MovieDBAPIKey));

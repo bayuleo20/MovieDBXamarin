@@ -17,6 +17,8 @@ namespace MovieDBSecond.ViewModels
         public ObservableCollection<Result> Movies { get; set; }
         public ICommand GetDataCommand { get; set; }
         string pageTitle = "Bayu Movie";
+        bool isLoading = false;
+
 
         public MainPageViewModel()
         {
@@ -25,27 +27,29 @@ namespace MovieDBSecond.ViewModels
 
         async Task GetData()
         {
-            var moviesResponse = await ApiManager.GetNowPlaying(Constants.MovieDBAPIKey);
+            isLoading = true;
+            OnPropertyChanged("IsLoading");
+            var moviesResponse = await ApiManager.GetNowPlaying();
 
             if (moviesResponse.IsSuccessStatusCode)
             {
                 var response = await moviesResponse.Content.ReadAsStringAsync();
                 var json = await Task.Run(() => JsonConvert.DeserializeObject<MoviesModel>(response));
-                Debug.WriteLine("bayu777");
-                Debug.WriteLine(response);
-                Debug.WriteLine(json.Results[0].Title);
-                Debug.WriteLine(json.Results[0].PosterPath);
                 Movies = new ObservableCollection<Result>(json.Results);
-                Debug.WriteLine("bayu888");
-                Debug.WriteLine(Movies);
-
-                pageTitle = "Bayu New";
                 OnPropertyChanged("Movies");
+
+                //test code for update string page title on UI
+                pageTitle = "Bayu New";
                 OnPropertyChanged("PageTitle");
+
+                await Application.Current.MainPage.DisplayAlert("Success to get data", "Good", "Ok");
+                isLoading = false;
+                OnPropertyChanged("IsLoading");
             }
             else{
-                Debug.WriteLine("bayu777");
-                Debug.WriteLine(moviesResponse.StatusCode);
+                await Application.Current.MainPage.DisplayAlert("Unable to get data", "Error", "Ok");
+                isLoading = false;
+                OnPropertyChanged("IsLoading");
                 //await PageDialog.AlertAsync("Unable to get data", "Error", "Ok");
             }
         }
@@ -65,6 +69,13 @@ namespace MovieDBSecond.ViewModels
             get { return pageTitle; }
             set { pageTitle = value; }
         }
+
+        public Boolean IsLoading
+        {
+            get { return isLoading; }
+            set { isLoading = value; }
+        }
+
 
 
     }

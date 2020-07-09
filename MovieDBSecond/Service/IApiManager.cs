@@ -6,6 +6,6 @@ namespace MovieDBSecond.Service
 {
     public interface IApiManager
     {
-        Task<HttpResponseMessage> GetNowPlaying(string api_key);
+        Task<HttpResponseMessage> GetNowPlaying();
     }
 }
