@@ -11,7 +11,8 @@ namespace MovieDBSecond
             InitializeComponent();
 
             //MainPage = new NavigationPage(new MainPage());
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            MainPage = new SplashScreen();
 
         }
 

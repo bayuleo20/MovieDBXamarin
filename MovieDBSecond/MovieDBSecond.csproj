@@ -27,5 +27,6 @@
     <Folder Include="Views\" />
     <Folder Include="Network\" />
     <Folder Include="Service\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
 </Project>

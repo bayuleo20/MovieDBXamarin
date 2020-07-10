@@ -113,6 +113,10 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\—Pngtree—hand-painted cartoon cute giraffe_4180843.png" />
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\—Pngtree—hand-painted cartoon cute giraffe_4180843-1.png" />
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\—Pngtree—hand-painted cartoon cute giraffe_4180843-2.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -133,5 +137,8 @@
       <Project>{628884C7-D9E3-45A5-8E80-FB4C69B92865}</Project>
       <Name>MovieDBSecond</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\Logo.imageset\" />
   </ItemGroup>
 </Project>
