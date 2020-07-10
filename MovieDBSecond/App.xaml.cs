@@ -12,7 +12,7 @@ namespace MovieDBSecond
 
             //MainPage = new NavigationPage(new MainPage());
             //MainPage = new MainPage();
-            MainPage = new SplashScreen();
+            MainPage = new NavigationPage(new SplashScreen());
 
         }
 

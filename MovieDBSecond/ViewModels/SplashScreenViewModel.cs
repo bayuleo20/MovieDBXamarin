@@ -5,19 +5,17 @@ using Xamarin.Forms;
 
 namespace MovieDBSecond.ViewModels
 {
-    public class SplashScreenViewModel
+    public class SplashScreenViewModel : BaseViewModel
     {
-        private INavigation navigation;
+        private SplashScreen _splashScreen;
 
-        public SplashScreenViewModel()
-        {
-            Debug.WriteLine("bayu123");
-            GotoNextPageAsync();
-        }
+        public INavigation navigation { get; set; }
 
-        public SplashScreenViewModel(INavigation navigation)
+        public SplashScreenViewModel(INavigation navigation, SplashScreen splashScreen)
         {
             this.navigation = navigation;
+            _splashScreen = splashScreen;
+            GotoNextPageAsync();
         }
 
         private async Task GotoNextPageAsync()
@@ -25,6 +23,7 @@ namespace MovieDBSecond.ViewModels
             var nextPage = new MainPage();
             await Task.Delay(5000);
             await navigation.PushAsync(nextPage);
+            navigation.RemovePage(_splashScreen);
         }
     }
 }

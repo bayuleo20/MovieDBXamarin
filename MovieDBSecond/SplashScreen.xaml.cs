@@ -10,7 +10,7 @@ namespace MovieDBSecond
         public SplashScreen()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.SplashScreenViewModel();
+            BindingContext = new ViewModels.SplashScreenViewModel(Navigation, this);
         }
     }
 }
