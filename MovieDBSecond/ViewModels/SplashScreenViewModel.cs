@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using MovieDBSecond.Views;
 using Xamarin.Forms;
 
 namespace MovieDBSecond.ViewModels
@@ -20,8 +21,8 @@ namespace MovieDBSecond.ViewModels
 
         private async Task GotoNextPageAsync()
         {
-            var nextPage = new MainPage();
-            await Task.Delay(5000);
+            var nextPage = new MenuPage();
+            await Task.Delay(2000);
             await navigation.PushAsync(nextPage);
             navigation.RemovePage(_splashScreen);
         }

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieDBSecond.Views.MenuPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout
+            Grid.Column="0"
+            BackgroundColor="Aqua">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MovieTappedCommand}"/>
+            </StackLayout.GestureRecognizers>
+            <Label
+                Text="Movies"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                />
+        </StackLayout>
+
+        <StackLayout
+            Grid.Column="1"
+            BackgroundColor="Aquamarine">
+            <Label
+                Text="Calculator"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Aquamarine"/>
+        </StackLayout>
+
+        <Label
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Text3"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    BackgroundColor="BlueViolet"/>
+        <Label
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="Text4"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    BackgroundColor="Chartreuse"/>
+    </Grid>
+
+</ContentPage>

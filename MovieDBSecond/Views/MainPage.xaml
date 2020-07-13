@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:MovieDBSecond.ViewModels"
              mc:Ignorable="d"
              x:Class="MovieDBSecond.MainPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="True">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="iOS" Value="0,50,0,0"/>
