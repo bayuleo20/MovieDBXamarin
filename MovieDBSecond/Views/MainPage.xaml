@@ -28,8 +28,9 @@
             <Button Text="Get Data"
                 Command="{Binding GetDataCommand}"/>
             <ListView x:Name="MoviesListview"
-                  ItemsSource="{Binding Movies}"
-                  HasUnevenRows="True">
+                ItemsSource="{Binding Movies}"
+                HasUnevenRows="True"
+                ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

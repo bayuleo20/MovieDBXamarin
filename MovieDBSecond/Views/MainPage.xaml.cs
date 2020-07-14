@@ -17,18 +17,20 @@ namespace MovieDBSecond
     {
 
         //public IList<Result> datas { get; set; }
+        ViewModels.MainPageViewModel _viewModel = new ViewModels.MainPageViewModel();
 
         public MainPage()
         {
             InitializeComponent();
 
-            this.BindingContext = new ViewModels.MainPageViewModel();
+            this.BindingContext = _viewModel;
 
         }
 
         protected async override void OnAppearing() {
 
             base.OnAppearing();
+            _viewModel.GetDataCommand.Execute(null);
 
             //LoadData();
             //await CallApi();
@@ -63,6 +65,22 @@ namespace MovieDBSecond
         //        await Navigation.PushAsync(secondPage);
         //    }
         //}
+
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Debug.WriteLine("Test133");
+            if (e.SelectedItem == null)
+            {
+                DisplayAlert("ItemSelected", "Null1", "OK");
+            }
+            else
+            {
+                Debug.WriteLine(e.SelectedItem);
+                var secondPage = new MovieDetail();
+                secondPage.BindingContext = e.SelectedItem as Result;
+                await Navigation.PushAsync(secondPage);
+            }
+        }
 
         //async Task CallApi()
         //{

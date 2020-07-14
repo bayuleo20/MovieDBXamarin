@@ -29,6 +29,9 @@
         <StackLayout
             Grid.Column="1"
             BackgroundColor="Aquamarine">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="CalculatorTappedCommand"/>
+            </StackLayout.GestureRecognizers>
             <Label
                 Text="Calculator"
                 HorizontalOptions="CenterAndExpand"

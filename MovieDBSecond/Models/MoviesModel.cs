@@ -15,7 +15,10 @@ namespace MovieDBSecond.Models
 
         public int Id { get; set; }
         public bool Adult { get; set; }
+
+        [JsonProperty("backdrop_path")]
         public string BackdropPath { get; set; }
+
         public string OriginalLanguage { get; set; }
         public string OriginalTitle { get; set; }
         public IList<int> GenreIds { get; set; }
@@ -25,6 +28,7 @@ namespace MovieDBSecond.Models
         public string ReleaseDate { get; set; }
 
         public string Poster => $"https://image.tmdb.org/t/p/w500{PosterPath}";
+        public string Backdrop => $"https://image.tmdb.org/t/p/w500{BackdropPath}";
     }
 
     public class Dates
