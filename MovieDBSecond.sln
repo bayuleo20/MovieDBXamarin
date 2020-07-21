@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDBSecond.UITests", "Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDBSecond", "MovieDBSecond\MovieDBSecond.csproj", "{628884C7-D9E3-45A5-8E80-FB4C69B92865}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{81253483-A707-4E34-A350-2C9B89DB890F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,5 +69,19 @@ Global
 		{628884C7-D9E3-45A5-8E80-FB4C69B92865}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{628884C7-D9E3-45A5-8E80-FB4C69B92865}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{628884C7-D9E3-45A5-8E80-FB4C69B92865}.Release|iPhone.Build.0 = Release|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{81253483-A707-4E34-A350-2C9B89DB890F}.Release|iPhone.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

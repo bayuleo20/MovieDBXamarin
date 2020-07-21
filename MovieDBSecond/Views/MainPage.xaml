@@ -13,9 +13,9 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
         <local:MainPageViewModel/>
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
 
     <AbsoluteLayout>
         

@@ -86,6 +86,8 @@ namespace MovieDBSecond.Service
                 .ExecuteAsync(async () =>
                 {
                     var result = await task;
+
+                    //handle spesific response code 
                     if (result.StatusCode == HttpStatusCode.Unauthorized)
                     {
                         //Logout

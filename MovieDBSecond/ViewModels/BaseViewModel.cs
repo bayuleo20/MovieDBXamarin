@@ -1,18 +1,19 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using MovieDBSecond.Service;
 
 namespace MovieDBSecond.ViewModels
 {
-    public class BaseViewModel: INotifyPropertyChanged
+    public class BaseViewModel
     {
         //public IUserDialogs PageDialog = UserDialogs.Instance;
         public IApiManager ApiManager;
         IApiService<MovieAPI> movieApi = new ApiService<MovieAPI>(Config.ApiUrl);
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
         public bool IsBusy { get; set; }
 
@@ -46,11 +47,11 @@ namespace MovieDBSecond.ViewModels
             }
         }
 
-        protected void OnPropertyChanged(string propertyName)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //public void OnPropertyChanged(string propertyName)
+        //{
+        //    var handler = PropertyChanged;
+        //    if (handler != null)
+        //        handler(this, new PropertyChangedEventArgs(propertyName));
+        //}
     }
 }

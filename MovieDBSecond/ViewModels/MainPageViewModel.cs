@@ -12,24 +12,31 @@ using Xamarin.Forms;
 
 namespace MovieDBSecond.ViewModels
 {
-    public class MainPageViewModel : BaseViewModel
+    public class MainPageViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Result> Movies { get; set; }
         public ICommand GetDataCommand { get; set; }
         string pageTitle = "Bayu Movie";
         bool isLoading = false;
-
+        private BaseViewModel baseViewModel;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public MainPageViewModel()
         {
-            GetDataCommand = new Command(async()=>await RunSafe(GetData()));
+            baseViewModel = new BaseViewModel();
+            GetDataCommand = new Command(async () => await baseViewModel.RunSafe(GetData()));
+        }
+
+        public MainPageViewModel(Boolean isTest = false)
+        {
+            if (!isTest) { baseViewModel = new BaseViewModel(); }
         }
 
         async Task GetData()
         {
             isLoading = true;
             OnPropertyChanged("IsLoading");
-            var moviesResponse = await ApiManager.GetNowPlaying();
+            var moviesResponse = await baseViewModel.ApiManager.GetNowPlaying();
 
             if (moviesResponse.IsSuccessStatusCode)
             {
@@ -74,6 +81,13 @@ namespace MovieDBSecond.ViewModels
         {
             get { return isLoading; }
             set { isLoading = value; }
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
 
