@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MovieDBSecond.ViewModels"
-             x:Class="MovieDBSecond.Views.CalculatorPage">
+             x:Class="MovieDBSecond.Views.CalculatorPage"
+             Visual="Default">
     <ContentPage.BindingContext>
         <local:CalculatorViewModel/>
     </ContentPage.BindingContext>
@@ -12,7 +13,9 @@
         Margin="12,12,12,12">
         <Label Text="Calculator Page"/>
         <Entry Placeholder="Input first number"
-               Text="{Binding Number1}"/>
+               Text="{Binding Number1}"
+               BackgroundColor="Aqua"
+               Visual="Material"/>
         <Entry Placeholder="Input second number"
                Text="{Binding Number2}"/>
         <Button Text="Calculate" Command="{Binding ButtonCalculate}"/>
