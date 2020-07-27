@@ -21,7 +21,7 @@ namespace MovieDBSecond.ViewModels
 
         private async Task GotoNextPageAsync()
         {
-            var nextPage = new MenuPage();
+            var nextPage = new LoginPage();
             await Task.Delay(2000);
             await navigation.PushAsync(nextPage);
             navigation.RemovePage(_splashScreen);

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieDBSecond.Views.LoginPage">
+
+    <StackLayout Orientation="Vertical"
+                 HorizontalOptions="Fill"
+                 VerticalOptions="CenterAndExpand">
+
+        <Image Source="Logo"/>
+        <Entry x:Name="input_email"
+               Text="{Binding Email}"
+               Keyboard="Email"
+               Placeholder="Email"
+               Margin="36, 8"/>
+        <Entry x:Name="input_password"
+               Text="{Binding Password}"
+               Placeholder="Password"
+               
+               IsPassword="True"
+               Margin="36, 8"/>
+        <Button Command="{Binding Button_Login}"
+                Text="Login"/>
+    </StackLayout>
+</ContentPage>
