@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieDBSecond.Views.LocalDataPage">
+    <StackLayout Orientation="Vertical"
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+
+        <Label Text="Input any data"/>
+        <Entry x:Name="input_data"
+               Text="{Binding InputData}"
+               Placeholder="Input data here"/>
+        <Button Command="{Binding Button_Save}"
+                Text="Save"/>
+        <Label Text="Data on local storage Login Page"/>
+        <Label Text="{Binding DataLocalLogin}"/>
+        <Label Text="Data on local storage Save Page"/>
+        <Label Text="{Binding DataLocalSave}"/>
+    </StackLayout>
+</ContentPage>

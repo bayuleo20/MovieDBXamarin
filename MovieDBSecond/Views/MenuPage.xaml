@@ -39,20 +39,33 @@
                 BackgroundColor="Aquamarine"/>
         </StackLayout>
 
-        <Label
-                    Grid.Column="0"
-                    Grid.Row="1"
-                    Text="Text3"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    BackgroundColor="BlueViolet"/>
-        <Label
-                    Grid.Column="1"
-                    Grid.Row="1"
-                    Text="Text4"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    BackgroundColor="Chartreuse"/>
+        <StackLayout
+            Grid.Column="0"
+            Grid.Row="1"
+            BackgroundColor="LightPink">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LocalStorageTappedCommand}"/>
+            </StackLayout.GestureRecognizers>
+            <Label
+                Text="Local Storage"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Aquamarine"/>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Column="1"
+            Grid.Row="1"
+            BackgroundColor="GreenYellow">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LogoutTappedCommand}"/>
+            </StackLayout.GestureRecognizers>
+            <Label
+                Text="Logout"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Aquamarine"/>
+        </StackLayout>
     </Grid>
 
 </ContentPage>

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MovieDBSecond.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MovieDBSecond.ViewModels
@@ -49,18 +50,26 @@ namespace MovieDBSecond.ViewModels
         {
             if (email == "bayuleo@gmail.com" && password == "123456")
             {
+                SavePreferenceData();
                 OpenNextPage();
             }
             else
             {
                 DisplayInvalidLoginPrompt();
+                Preferences.Set("myData", "fromLoginPageWithoutPass");
+                OpenNextPage();
             }
+        }
+
+        private void SavePreferenceData()
+        {
+            Preferences.Set("isLogin", true);
+            Preferences.Set("myData", "fromLoginPage");
         }
 
         private async Task OpenNextPage()
         {
             var nextPage = new MenuPage();
-            await Task.Delay(2000);
             await navigation.PushAsync(nextPage);
             navigation.RemovePage(loginPage);
         }
