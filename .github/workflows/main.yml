@@ -3,7 +3,7 @@ on:
   # a pull request. 
   push:
     branches:
-      - Development
+      - master
   pull_request:
       types: [opened, synchronize, reopened]
 name: Anayze with SonarCloud
