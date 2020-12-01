@@ -26,5 +26,5 @@ jobs:
             -Dsonar.cs.vscoveragexml.reportsPaths:coverage.coveragexml
             -Dsonar.sources=.
             -Dsonar.test.exclusions=MovieDBSecond.iOS/**
-            -Dsonar.tests=MovieDBSecond/
+            -Dsonar.tests=MovieDBSecond
             -Dsonar.verbose=true
