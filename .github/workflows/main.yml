@@ -6,6 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  sonarcloud:
   - name: Analize with Sonar
       if: github.event_name == 'push'
       uses: sonarsource/sonarcloud-github-action@master
