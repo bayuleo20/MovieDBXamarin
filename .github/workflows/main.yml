@@ -25,6 +25,6 @@ jobs:
             -Dsonar.projectKey=bayuleo20_MovieDBXamarin
             -Dsonar.cs.vscoveragexml.reportsPaths:coverage.coveragexml
             -Dsonar.sources=.
-            -Dsonar.test.exclusions=MovieDBSecond.iOS, MovieDBSecond.Android, MovieDBSecond.UITests, UnitTest
+            -Dsonar.test.exclusions=MovieDBSecond.iOS
             -Dsonar.tests=MovieDBSecond/
             -Dsonar.verbose=true
