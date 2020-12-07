@@ -32,19 +32,12 @@ jobs:
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
-      - name: Setup MSBuild.exe
-        uses: warrenbuckley/Setup-MSBuild@v1
-
-      - name: MSBuild
-        working-directory: src
-        run: msbuild MyProject.csproj
-        
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"bayuleo20_MovieDBXamarin" /o:"bayuleo20" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          .\.sonar build "MovieDBSecond.sln" /t:Rebuild
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"bayuleo20_MovieDBXamarin" /o:"bayuleo20" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /s:$PWD\sonar-project.properties
+          dotnet test --settings coverlet.runsettings --logger trx
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
