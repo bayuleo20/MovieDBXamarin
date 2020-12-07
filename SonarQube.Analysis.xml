@@ -23,7 +23,7 @@
         MovieDBSecond.iOS\**,
         MovieDBSecond.UITests\**,
     </Property>
-    <Property Name="sonar.cs.opencover.reportsPaths">
+    <Property Name="sonar.cs.vscoveragexml.reportsPaths">
         testcoverage.coveragexml,
     </Property>
 
