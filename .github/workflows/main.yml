@@ -42,5 +42,5 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"bayuleo20_MovieDBXamarin" /o:"bayuleo20" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /s:$PWD\SonarQube.Analysis.xml /d:sonar.verbose=true
-          dotnet test --settings coverlet.runsettings --logger trx
+          dotnet /t:Rebuild /v:diag
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
