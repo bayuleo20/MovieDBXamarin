@@ -37,6 +37,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
+        working-directory: ./UnitTest/
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"bayuleo20_MovieDBXamarin" /o:"bayuleo20" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths="testcoverage.coveragexml" /s:$PWD\SonarQube.Analysis.xml
           dotnet build --configuration Release --no-restore MovieDBSecond.sln
